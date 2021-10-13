@@ -12,7 +12,7 @@ def getMatrixPoints(matrix) -> list:
     """
         Retorna os pontos presentes na matriz
 
-        Argumentos:
+        Arguments:
         matrix (list) -> Entrada do problema
 
         Returns:
@@ -64,6 +64,9 @@ def getDistance(pA: tuple, pB: tuple) -> int:
 
 
 def joinList(values: list) -> list:
+    """
+        Função com o objetivo de transformar nested lists em uma única lista
+    """
     joinedList = []
     for i in values:
         if isinstance(i, list):
@@ -98,21 +101,21 @@ def getCompleteDistance(points):
     return sumOfDistance
 
 #Função para obter a chave do valor mínimo
-def getDictKey(dicionario, valor):
-    for key, value in dicionario.items():
-        if valor == value:
+def getDictKey(dict, minValue):
+    for key, value in dict.items():
+        if minValue == value:
             return key
 
 
 def flyFood(matrix: list[list[str]], matrixPoints: list[str]) -> str:
-    """Retorna uma lista com os menores caminhos possiveis.
+    """string contendo o caminho com valor mínimo
 
     Arguments:
         matrix (list[list[str]]: Uma coleção de listas
         matrixPoints (list[str]): Lista contendo os pontos presentes no caso teste
 
     Returns:
-        list: Tupla com os todos os caminhos mais rápidos, passando pelos pontos identificados no caso teste
+        str: string contendo o caminho com valor mínimo
 
     """
 
@@ -167,5 +170,5 @@ matrix = elementsArray[1:]
 #Obtendo todos os pontos à serem analisados
 matrixPoints = getMatrixPoints(matrix)
 
-#Chamando 
+#Chamando função principal FlyFood
 flyFood(matrix, matrixPoints)
